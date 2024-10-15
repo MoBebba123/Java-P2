@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class KryptomethodeTest {
 	@Test
-	public void KryptomethodeTest() {
+	public void kryptomethodeTest() {
 		// public static void main(String[] args) {
 
 		String cryptKey = "abcde12345";
