@@ -46,13 +46,10 @@ public class BubbleSort implements Sortierung {
 	 * @param liste Zu sortierende Liste.
 	 */
 	public void sortiere(Liste liste) {
-		// System.out.println("Sortierung beginnt ....");
 
 		Liste.Iterator iterator_now = liste.erzeuge_Iterator();
 		Liste.Iterator iterator_next = liste.erzeuge_Iterator();
 		int lenList = laengeListe(liste);
-
-		// System.out.println(lenList);
 
 		Ergebnis ergebnis_now = new Ergebnis();
 		Ergebnis ergebnis_next = new Ergebnis();
@@ -64,8 +61,6 @@ public class BubbleSort implements Sortierung {
 			for (int j = 0; j < lenList - 1; j++) {
 				ergebnis_now = (Ergebnis) iterator_now.element();
 				ergebnis_next = (Ergebnis) iterator_next.element();
-				// System.out.println(ergebnis_now.laengeReihe);
-				// System.out.println(ergebnis_next.laengeReihe);
 				if (aufsteigend) {
 					if (ergebnis_now.compareTo(ergebnis_next) <= 0) {
 						liste.verschiebe_nach(iterator_now, iterator_next);
