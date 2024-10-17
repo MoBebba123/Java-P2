@@ -10,17 +10,16 @@ import java.io.*;
 
 /**
  * Diese Klasse stellt die grundlegenden Funktionen fuer die Datenspeicher zur
- * Verfuegung. Es werden die Methoden von Kryptomethode aufgerufen
+ * Verfuegung.
  * 
- * @param String cryptKey
- * @param String line
- * @param int    noOfLines
+ * @param String zeile
+ * @param int    zeilenanzahl
  */
 
 public class Datenspeicher {
 
-	private String line = null;
-	private int noOfLines = 0;
+	private String zeile = null;
+	private int zeilenanzahl = 0;
 
 	/**
 	 * Methode fuer die Datei Ergbnisliste.txt es wird geprueft, ob die Datei
@@ -28,7 +27,7 @@ public class Datenspeicher {
 	 * 
 	 * @return Pfad der Datei durch die File Klasse
 	 */
-	private String getfile(String dateiname) {
+	private String checkFile(String dateiname) {
 
 		File filename = new File(dateiname);
 		try {
@@ -40,7 +39,7 @@ public class Datenspeicher {
 			} else {
 				try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
 					while (reader.readLine() != null) {
-						noOfLines++;
+						zeilenanzahl++;
 					}
 				}
 			}
@@ -59,23 +58,23 @@ public class Datenspeicher {
 	@SuppressWarnings("resource")
 	public Liste lesen(String dateiname) {
 		try {
-			FileReader readfile = new FileReader(getfile(dateiname));
+			FileReader readfile = new FileReader(checkFile(dateiname));
 			BufferedReader bufferedReader = new BufferedReader(readfile);
 			Liste liste = new VerketteteListe();
 			StringBuffer buffer = new StringBuffer();
 			Komprimierung compTest = new Lauflaenge();
 
-			if (noOfLines == 0) {
+			if (zeilenanzahl == 0) {
 				return liste;
 			} else {
-				Ergebnis[] ergebnis = new Ergebnis[noOfLines];
+				Ergebnis[] ergebnis = new Ergebnis[zeilenanzahl];
 				int cnt = 0;
-				while ((line = bufferedReader.readLine()) != null) {
+				while ((zeile = bufferedReader.readLine()) != null) {
 					buffer = new StringBuffer();
-					buffer.append(line);
-					line = compTest.expandieren(buffer.toString());
-					if (line.contains("|")) {
-						String[] lineSplit = line.split("\\|", 3);
+					buffer.append(zeile);
+					zeile = compTest.expandieren(buffer.toString());
+					if (zeile.contains("|")) {
+						String[] lineSplit = zeile.split("\\|", 3);
 						ergebnis[cnt] = new Ergebnis();
 						/*
 						 * System.out.println(lineSplit[0]); System.out.println(lineSplit[1]);
@@ -121,7 +120,7 @@ public class Datenspeicher {
 
 			File writefile = new File(dateiname);
 			writefile.delete();
-			writer = new BufferedWriter(new FileWriter(getfile(dateiname), true));
+			writer = new BufferedWriter(new FileWriter(checkFile(dateiname), true));
 			for (; iterator.nach_ende() != true;) {
 				line = (Ergebnis) iterator.element();
 				ergebnisString = line.ziffernanzahl + "|" + line.zeit + "|" + line.name;
