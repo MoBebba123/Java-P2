@@ -6,9 +6,8 @@ import org.junit.Test;
 public class KomprimierungTest {
 	@Test
 	public void komprimierungTest() {
-		// public static void main(String[] args) {
-		String s = "66666666666dddddd;;;ääää####6g6";
-		Komprimierung compTest = new RunLength();
+		String s = "555555uuuu;;;das+++332d";
+		Komprimierung compTest = new Lauflaenge();
 
 		String e = compTest.komprimieren(s);
 		String d = compTest.expandieren(e);

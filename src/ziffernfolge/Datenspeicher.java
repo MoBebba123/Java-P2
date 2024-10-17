@@ -63,7 +63,7 @@ public class Datenspeicher {
 			BufferedReader bufferedReader = new BufferedReader(readfile);
 			Liste liste = new VerketteteListe();
 			StringBuffer buffer = new StringBuffer();
-			Komprimierung compTest = new RunLength();
+			Komprimierung compTest = new Lauflaenge();
 
 			if (noOfLines == 0) {
 				return liste;
@@ -114,7 +114,7 @@ public class Datenspeicher {
 			Liste.Iterator iterator = liste.erzeuge_Iterator();
 			String ergebnisString = "";
 			Ergebnis line = new Ergebnis();
-			Komprimierung compTest = new RunLength();
+			Komprimierung compTest = new Lauflaenge();
 
 			StringBuffer buffer;
 			BufferedWriter writer = null;

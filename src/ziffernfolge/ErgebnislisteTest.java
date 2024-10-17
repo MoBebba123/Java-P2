@@ -18,7 +18,7 @@ public class ErgebnislisteTest {
 		assertEquals(liste.ende(), true);
 
 		Ergebnis ergebnis = new Ergebnis();
-		ergebnis.name = "Adam";
+		ergebnis.name = "Bebba";
 		ergebnis.zeit = 25;
 		ergebnis.ziffernanzahl = 20;
 

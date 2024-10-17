@@ -1,6 +1,6 @@
 package ziffernfolge;
 
-public class RunLength implements Komprimierung {
+public class Lauflaenge implements Komprimierung {
 	// Konstruktor fuer Implementierungen:
 	/**
 	 * Ein Komprimierer und ein Dekomp rimierer werden bereitgestellt.
