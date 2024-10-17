@@ -19,7 +19,6 @@ import java.io.*;
 
 public class Datenspeicher {
 
-	private String cryptKey = "abcd1234";
 	private String line = null;
 	private int noOfLines = 0;
 
@@ -64,7 +63,6 @@ public class Datenspeicher {
 			BufferedReader bufferedReader = new BufferedReader(readfile);
 			Liste liste = new VerketteteListe();
 			StringBuffer buffer = new StringBuffer();
-			Kryptomethode decrypt = new Vigenere(cryptKey);
 			Komprimierung compTest = new RunLength();
 
 			if (noOfLines == 0) {
@@ -75,7 +73,6 @@ public class Datenspeicher {
 				while ((line = bufferedReader.readLine()) != null) {
 					buffer = new StringBuffer();
 					buffer.append(line);
-					decrypt.entschluesseln(buffer);
 					line = compTest.expandieren(buffer.toString());
 					if (line.contains("|")) {
 						String[] lineSplit = line.split("\\|", 3);
@@ -118,7 +115,6 @@ public class Datenspeicher {
 			String ergebnisString = "";
 			Ergebnis line = new Ergebnis();
 			Komprimierung compTest = new RunLength();
-			Kryptomethode encrypt = new Vigenere(cryptKey);
 
 			StringBuffer buffer;
 			BufferedWriter writer = null;
@@ -132,7 +128,6 @@ public class Datenspeicher {
 				ergebnisString = compTest.komprimieren(ergebnisString);
 				buffer = new StringBuffer(ergebnisString);
 
-				encrypt.verschluesseln(buffer);
 				writer.write(buffer.toString());
 
 				writer.newLine();
