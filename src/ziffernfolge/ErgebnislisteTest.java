@@ -33,7 +33,6 @@ public class ErgebnislisteTest {
 		liste.weiter();
 		assertEquals(liste.ende(), true);
 
-		// Ergebnisliste liste2 = new Ergebnisliste();
 		Ergebnis[] ergebnis2 = new Ergebnis[10];
 
 		for (int i = 0; i < 10; i++) {

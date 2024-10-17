@@ -20,7 +20,7 @@ public class ErgebnisTest {
 
 		// gleiches ergebnis, gleiche zeit
 		ergebnis2 = new Ergebnis();
-		ergebnis2.name = "Adam";
+		ergebnis2.name = "Bebba";
 		ergebnis2.zeit = 23;
 		ergebnis2.ziffernanzahl = 2;
 		returnwert = ergebnis1.compareTo(ergebnis2);
@@ -28,7 +28,7 @@ public class ErgebnisTest {
 
 		// gleiches ergebnis weniger Zeit
 		ergebnis2 = new Ergebnis();
-		ergebnis2.name = "Adam";
+		ergebnis2.name = "Bebba";
 		ergebnis2.zeit = 22;
 		ergebnis2.ziffernanzahl = 2;
 		returnwert = ergebnis1.compareTo(ergebnis2);
@@ -36,7 +36,7 @@ public class ErgebnisTest {
 
 		// gleiches ergebnis mehr Zeit
 		ergebnis2 = new Ergebnis();
-		ergebnis2.name = "Adam";
+		ergebnis2.name = "Bebba";
 		ergebnis2.zeit = 25;
 		ergebnis2.ziffernanzahl = 2;
 		returnwert = ergebnis1.compareTo(ergebnis2);
@@ -44,7 +44,7 @@ public class ErgebnisTest {
 
 		// weniger zahlen
 		ergebnis2 = new Ergebnis();
-		ergebnis2.name = "Adam";
+		ergebnis2.name = "Bebba";
 		ergebnis2.zeit = 25;
 		ergebnis2.ziffernanzahl = 1;
 		returnwert = ergebnis1.compareTo(ergebnis2);
@@ -52,7 +52,7 @@ public class ErgebnisTest {
 
 		// mehr zahlen
 		ergebnis2 = new Ergebnis();
-		ergebnis2.name = "Adam";
+		ergebnis2.name = "Bebba";
 		ergebnis2.zeit = 25;
 		ergebnis2.ziffernanzahl = 5;
 		returnwert = ergebnis1.compareTo(ergebnis2);

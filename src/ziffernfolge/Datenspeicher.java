@@ -9,7 +9,7 @@ import java.io.*;
  */
 
 /**
- * Diese Klasse stellt die grundlegenden Funktionen fuer die Datenspeicher zur
+ * Diese Klasse stellt die Funktionen fuer die Datenspeicher zur
  * Verfuegung.
  * 
  * @param String zeile
