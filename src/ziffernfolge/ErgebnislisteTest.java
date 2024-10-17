@@ -18,16 +18,16 @@ public class ErgebnislisteTest {
 		assertEquals(liste.ende(), true);
 
 		Ergebnis ergebnis = new Ergebnis();
-		ergebnis.spielerName = "Adam";
-		ergebnis.spielZeit = 25;
-		ergebnis.laengeReihe = 20;
+		ergebnis.name = "Adam";
+		ergebnis.zeit = 25;
+		ergebnis.ziffernanzahl = 20;
 
 		liste.speichere(ergebnis);
 		liste.start();
 
-		assertEquals(ergebnis.spielerName, liste.aktuelles_Element().spielerName);
-		assertEquals(ergebnis.spielZeit, liste.aktuelles_Element().spielZeit, 0);
-		assertEquals(ergebnis.laengeReihe, liste.aktuelles_Element().laengeReihe);
+		assertEquals(ergebnis.name, liste.aktuelles_Element().name);
+		assertEquals(ergebnis.zeit, liste.aktuelles_Element().zeit, 0);
+		assertEquals(ergebnis.ziffernanzahl, liste.aktuelles_Element().ziffernanzahl);
 		assertEquals(liste.ende(), false);
 
 		liste.weiter();
@@ -38,9 +38,9 @@ public class ErgebnislisteTest {
 
 		for (int i = 0; i < 10; i++) {
 			ergebnis2[i] = new Ergebnis();
-			ergebnis2[i].spielerName = "Testname" + i;
-			ergebnis2[i].spielZeit = 20 + i;
-			ergebnis2[i].laengeReihe = 30 + i;
+			ergebnis2[i].name = "Testname" + i;
+			ergebnis2[i].zeit = 20 + i;
+			ergebnis2[i].ziffernanzahl = 30 + i;
 			liste.speichere(ergebnis2[i]);
 			assertEquals(liste.ende(), true);
 		}

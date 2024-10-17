@@ -84,9 +84,9 @@ public class Datenspeicher {
 						 * System.out.println(lineSplit[0]); System.out.println(lineSplit[1]);
 						 * System.out.println(lineSplit[2]);
 						 */
-						ergebnis[cnt].laengeReihe = Integer.parseInt(lineSplit[0]);
-						ergebnis[cnt].spielZeit = Long.parseLong(lineSplit[1]);
-						ergebnis[cnt].spielerName = lineSplit[2];
+						ergebnis[cnt].ziffernanzahl = Integer.parseInt(lineSplit[0]);
+						ergebnis[cnt].zeit = Integer.parseInt(lineSplit[1]);
+						ergebnis[cnt].name = lineSplit[2];
 						liste.setze_an_Ende(ergebnis[cnt]);
 					} else {
 						continue;
@@ -128,7 +128,7 @@ public class Datenspeicher {
 			writer = new BufferedWriter(new FileWriter(getfile(dateiname), true));
 			for (; iterator.nach_ende() != true;) {
 				line = (Ergebnis) iterator.element();
-				ergebnisString = line.laengeReihe + "|" + line.spielZeit + "|" + line.spielerName;
+				ergebnisString = line.ziffernanzahl + "|" + line.zeit + "|" + line.name;
 				ergebnisString = compTest.komprimieren(ergebnisString);
 				buffer = new StringBuffer(ergebnisString);
 

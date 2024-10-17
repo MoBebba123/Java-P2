@@ -12,9 +12,9 @@ package ziffernfolge;
 
 public class Ergebnis implements Comparable<Ergebnis> {
 
-	public String spielerName;
-	public long spielZeit;
-	public int laengeReihe;
+	public String name;
+	public int zeit;
+	public int ziffernanzahl;
 
 	/**
 	 * Vergleicht Ergebnis mit mitgegebenen Ergebnis.
@@ -28,14 +28,14 @@ public class Ergebnis implements Comparable<Ergebnis> {
 	 */
 	public int compareTo(Ergebnis ergebnis) {
 		if (ergebnis != null) {
-			if (ergebnis.laengeReihe == this.laengeReihe) {
-				if (ergebnis.spielZeit < this.spielZeit) {
+			if (ergebnis.ziffernanzahl == this.ziffernanzahl) {
+				if (ergebnis.zeit < this.zeit) {
 					return -1;
-				} else if (ergebnis.spielZeit > this.spielZeit) {
+				} else if (ergebnis.zeit > this.zeit) {
 					return 1;
 				}
 				return 0;
-			} else if (ergebnis.laengeReihe > this.laengeReihe) {
+			} else if (ergebnis.ziffernanzahl > this.ziffernanzahl) {
 				return 1;
 			} else {
 				return -1;
