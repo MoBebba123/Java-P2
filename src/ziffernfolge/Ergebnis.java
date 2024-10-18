@@ -1,13 +1,14 @@
 package ziffernfolge;
 
 /**
- * Klasse fuer das Ergebnis
- * die soll von Comparable erben.
+ * Klasse, die ein Ergebnis darstellt und von Comparable erbt.
+ * Ein Ergebnis besteht aus einem Namen, der benötigten Zeit und der Anzahl
+ * der Ziffern. Diese Klasse ermöglicht den Vergleich von Ergebnissen basierend
+ * auf der Ziffernanzahl und der Zeit.
  * 
  * @author Mohamed Bebba
  * @version 08.10.2024
  */
-
 public class Ergebnis implements Comparable<Ergebnis> {
 
 	public String name;

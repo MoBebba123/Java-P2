@@ -1,5 +1,15 @@
 package ziffernfolge;
 
+/**
+ * Die Klasse Lauflaenge implementiert das Run-Length-Encoding zur
+ * Komprimierung von Zeichenketten und deren anschließender Dekomprimierung.
+ * Zeichenfolgen, die mehrfach hintereinander vorkommen, werden durch ein
+ * Steuerzeichen
+ * und die Anzahl der Wiederholungen komprimiert.
+ * 
+ * @author Mohamed Bebba
+ * @version 08.10.2024
+ */
 public class Lauflaenge implements Komprimierung {
 
 	private char steuerzeichen = '|';

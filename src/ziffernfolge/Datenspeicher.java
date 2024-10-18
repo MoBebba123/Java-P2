@@ -3,29 +3,25 @@ package ziffernfolge;
 import java.io.*;
 
 /**
- * Klasse fuer den Datenspeicher
+ * Klasse zur Verwaltung des Datenspeichers für Ergebnislisten.
+ * Diese Klasse stellt Methoden zur Überprüfung, Speicherung und zum
+ * Auslesen von Ergebnislisten zur Verfügung.
+ * 
  * @author Mohamed Bebba
  * @version 08.10.2024
  */
-
-/**
- * Diese Klasse stellt die Funktionen fuer die Datenspeicher zur
- * Verfuegung.
- * 
- * @param String zeile
- * @param int    zeilenanzahl
- */
-
 public class Datenspeicher {
 
 	private String zeile = null;
 	private int zeilenanzahl = 0;
 
 	/**
-	 * Methode fuer die Datei Ergbnisliste.txt es wird geprueft, ob die Datei
-	 * existiert oder nicht.
+	 * Überprüft, ob eine Datei existiert, und erstellt sie, wenn sie nicht
+	 * vorhanden ist.
+	 * Falls die Datei existiert, wird die Anzahl der Zeilen gezählt.
 	 * 
-	 * @return Pfad der Datei durch die File Klasse
+	 * @param dateiname Der Name der zu überprüfenden Datei.
+	 * @return Der Pfad der Datei.
 	 */
 	private String checkFile(String dateiname) {
 
@@ -49,11 +45,11 @@ public class Datenspeicher {
 	}
 
 	/**
-	 * Auslesen der Ergebnisliste aus einer Datei
+	 * Liest eine Ergebnisliste aus einer Datei und gibt diese zurück.
+	 * Es wird die Datei ausgelesen, deren Name als Parameter übergeben wird.
 	 * 
-	 * @param dateiname Dateiname zum Auslesen der Ergebnisliste
-	 * @return Eine Ergebnisliste, welche ausgelesen wurde
-	 * 
+	 * @param dateiname Der Name der Datei, die ausgelesen werden soll.
+	 * @return Die ausgelesene Ergebnisliste oder null, falls ein Fehler auftritt.
 	 */
 	@SuppressWarnings("resource")
 	public Liste lesen(String dateiname) {
@@ -76,10 +72,7 @@ public class Datenspeicher {
 					if (zeile.contains("|")) {
 						String[] lineSplit = zeile.split("\\|", 3);
 						ergebnis[cnt] = new Ergebnis();
-						/*
-						 * System.out.println(lineSplit[0]); System.out.println(lineSplit[1]);
-						 * System.out.println(lineSplit[2]);
-						 */
+
 						ergebnis[cnt].ziffernanzahl = Integer.parseInt(lineSplit[0]);
 						ergebnis[cnt].zeit = Integer.parseInt(lineSplit[1]);
 						ergebnis[cnt].name = lineSplit[2];
@@ -100,12 +93,13 @@ public class Datenspeicher {
 	}
 
 	/**
-	 * Speichert eine Ergebnisliste in einer Datei mit dem übergebenen Dateinamen
+	 * Speichert eine Ergebnisliste in einer Datei mit dem angegebenen Namen.
+	 * Es wird eine Komprimierung der Liste durchgeführt und in der Datei
+	 * abgespeichert.
 	 * 
-	 * @param liste     Die abzuspeichernde Liste
-	 * @param dateiname Name der Datei ohne Dateiendung, in welcher die
-	 *                  Ergebnisliste abgespeichert wird
-	 *
+	 * @param liste     Die zu speichernde Ergebnisliste.
+	 * @param dateiname Der Name der Datei, in der die Liste gespeichert wird.
+	 * @throws IOException Falls ein Fehler beim Speichern der Datei auftritt.
 	 */
 	@SuppressWarnings("resource")
 	public void speichern(Liste liste, String dateiname) throws IOException {

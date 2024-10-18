@@ -3,14 +3,12 @@ package ziffernfolge;
 import java.io.IOException;
 
 /**
- * Klasse fuer die Ergebnisliste
+ * Klasse zur Verwaltung einer Ergebnisliste.
+ * Diese Klasse bietet Methoden, um Ergebnisse zu speichern, abzurufen
+ * und die Liste zu sortieren.
+ * 
  * @author Mohamed Bebba
  * @version 08.10.2024
- */
-
-/**
- * Diese Klasse stellt die Methoden
- * fuer die Ergbnisliste zur Verfuegung
  */
 public class Ergebnisliste {
 	String dateiname = "Ergebnisliste.txt";
