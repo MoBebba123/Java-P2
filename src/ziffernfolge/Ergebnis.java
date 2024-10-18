@@ -2,12 +2,10 @@ package ziffernfolge;
 
 /**
  * Klasse fuer das Ergebnis
+ * die soll von Comparable erben.
+ * 
  * @author Mohamed Bebba
  * @version 08.10.2024
- */
-
-/**
- * Klasse soll von Comparable erben.
  */
 
 public class Ergebnis implements Comparable<Ergebnis> {

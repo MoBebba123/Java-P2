@@ -7,7 +7,8 @@ package ziffernfolge;
  * @author Andreas Kurz
  * @version 02.09.2018
  */
-public interface Komprimierung { // Konstruktor f�r Implementierungen:
+public interface Komprimierung {
+    // Konstruktor fuer Implementierungen:
     /**
      * Ein Komprimierer und ein Dekomp
      * rimierer werden bereitgestellt.

@@ -2,13 +2,11 @@ package ziffernfolge;
 
 /**
  * Klasse fuer den Sortiealg. Bubbelsort
- * @author Mohamed Bebba
- * @version 08.10.2024
- */
-
-/**
  * Diese Klasse stellt die grundlegenden Funktionen
  * fuer die Sortierung zur Verfuegung
+ * 
+ * @author Mohamed Bebba
+ * @version 08.10.2024
  */
 
 public class BubbleSort implements Sortierung {
